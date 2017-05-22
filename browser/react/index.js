@@ -15,6 +15,7 @@ import LyricsContainer from './containers/LyricsContainer';
 import App from './components/App';
 import Albums from './components/Albums';
 import Songs from './components/Songs';
+import StationContainer from './containers/StationContainer';
 
 import axios from 'axios';
 import store from './store';
@@ -73,6 +74,7 @@ ReactDOM.render(
           <Route path="/playlists/:playlistId" component={PlaylistContainer} onEnter={onPlaylistEnter}/>
           <Route path="/lyrics" component={LyricsContainer} />
           <Route path="/stations" component={StationsContainer} onEnter={onStationsEnter}/>
+          <Route path="/stations/:genreName" component={StationContainer}/>
           <IndexRedirect to="/albums"/>
         </Route>
 

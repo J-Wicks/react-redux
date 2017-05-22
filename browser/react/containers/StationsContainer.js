@@ -7,7 +7,7 @@ const convertSongsToStations = (songsArray) => {
 	const stations = {};
 	// console.log('Im in songs2stations ', songsArray);
 	songsArray.forEach(song => {
-		const genre = song.genre;
+    const genre = song.genre;
 		stations[genre] = stations[genre] || [];
 		stations[genre].push(song);
 	});

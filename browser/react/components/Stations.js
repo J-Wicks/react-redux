@@ -12,7 +12,7 @@ function Stations(props){
 	        Object.keys(props.stations).map(station => {
 	          return (
 	            <div className="list-group-item" key={station}>
-	              <Link to={'fill/me/in/later'}>{station}</Link>
+	              <Link to={`/stations/${station}`}>{station}</Link>
 	            </div>
 	          );
 	        })
