@@ -1,5 +1,7 @@
 // ******Lyrics******
 export const SET_LYRICS = 'SET_LYRICS';
+export const ARTIST_QUERY = 'ARTIST_QUERY';
+export const SONG_QUERY = 'SONG_QUERY';
 
 // Albums
 export const RECEIVE_ALBUMS = 'RECEIVE_ALBUMS';

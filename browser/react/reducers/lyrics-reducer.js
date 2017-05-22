@@ -1,5 +1,7 @@
 import {
-  SET_LYRICS
+  ARTIST_QUERY,
+  SET_LYRICS,
+  SONG_QUERY
 } from '../constants';
 
 const initialLyricsState = {
@@ -14,6 +16,14 @@ export default function (state = initialLyricsState, action) {
 
     case SET_LYRICS:
       newState.text = action.text;
+      break;
+
+    case ARTIST_QUERY:
+      newState.artistQuery = action.artistQuery;
+      break;
+
+    case SONG_QUERY:
+      newState.songQuery = action.songQuery;
       break;
 
     default:

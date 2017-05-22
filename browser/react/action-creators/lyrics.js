@@ -1,4 +1,4 @@
-import {SET_LYRICS} from '../constants';
+import {SET_LYRICS, SONG_QUERY, ARTIST_QUERY } from '../constants';
 import axios from 'axios';
 
 export const setLyrics = text => ({
@@ -6,8 +6,21 @@ export const setLyrics = text => ({
   text
 });
 
-export const searchLyrics = (artist, song) => {
-  return dispatch => {
+export const setArtistQuery = artistQuery => ({
+  type: ARTIST_QUERY,
+  artistQuery
+});
+
+export const setSongQuery = songQuery => ({
+  type: SONG_QUERY,
+  songQuery
+});
+
+
+export const searchLyrics = () => {
+  return (dispatch, getState) => {
+  	const artist = getState().artistQuery
+  	const song = getState().songQuery
     axios.get(`/api/lyrics/${artist}/${song}`)
       .then(res => {
         dispatch(setLyrics(res.data.lyric));
